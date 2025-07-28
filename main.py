@@ -28,3 +28,7 @@ z = "Upper"
 print(z.upper())
 u = "LOwER"
 print(u.lower())
+
+# Split
+spliter = "Hallo Welt, ich lerne, Python gerade"
+print(spliter.split(", "))
