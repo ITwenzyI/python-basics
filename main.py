@@ -36,3 +36,4 @@ print(spliter.split(", "))
 # Find
 finder = "Ich liebe Python gerade :)"
 print(finder.find("Python"))
+print(finder[finder.find("Python"):])
