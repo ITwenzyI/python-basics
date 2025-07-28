@@ -19,4 +19,12 @@ print(g)
 
 # String Multiplizieren
 q = "Hallo"
+zahl = 100
 print(q * 10)
+print(q + str(zahl))
+
+# Upper / Lower
+z = "Upper"
+print(z.upper())
+u = "LOwER"
+print(u.lower())
