@@ -32,3 +32,7 @@ print(u.lower())
 # Split
 spliter = "Hallo Welt, ich lerne, Python gerade"
 print(spliter.split(", "))
+
+# Find
+finder = "Ich liebe Python gerade :)"
+print(finder.find("Python"))
