@@ -18,3 +18,16 @@ elif 3 <= strecke_km < 7:
 else:
     print("Lange Strecke! Empfehlung mit Auto!")
 
+tickettyp = int(input("Welcome to the Ticket System. What is your age? : "))
+anzahl = int(input("How many tickets : "))
+
+if tickettyp <= 0:
+    print("Error! Invalid Age!")
+elif tickettyp < 18:
+    print("That would be", anzahl*5, " Euro for the Tickets!")
+elif tickettyp < 65:
+    print("That would be", anzahl*10, "Euro for the Tickets!")
+elif tickettyp < 100:
+    print("That would be", anzahl*7.5, "Euro for the Tickets!")
+else:
+    print("Error! Invalid Age!")
