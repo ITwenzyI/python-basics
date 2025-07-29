@@ -1,0 +1,5 @@
+# Normaler Kommentar
+
+"""
+Block Kommentar
+"""
