@@ -1,3 +1,5 @@
+# Veränderbar
+
 #Leere List
 leere_liste = []
 print(leere_liste)
@@ -35,6 +37,8 @@ print(len(new_list))
 print(min(new_list))
 print(max(new_list))
 print(new_list[1:len(new_list)])
+new_list[1] = "Z"
+print(new_list)
 
 # List in List
 
