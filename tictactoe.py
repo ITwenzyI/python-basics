@@ -13,6 +13,35 @@ def print_spielfeld(spielfeld):
         print("|".join(zeile))
         print("------")
 
+# 3. Zug
+def zug(spielfeld, spieler, zeile, spalte):
+    if spielfeld[zeile][spalte] == " ":
+        spielfeld[zeile][spalte] = spieler
+        return True
+    else:
+        return False
+
+# 4. Result
+def result(spielfeld, spieler):
+    for zeile in range(3):
+        if spielfeld[zeile][0] == spielfeld[zeile][1] == spielfeld[zeile][2] == spieler:
+            return True
+
+    for spalte in range(3):
+        if spielfeld[0][spalte] == spielfeld[1][spalte] == spielfeld[2][spalte] == spieler:
+            return True
+
+    if spielfeld[0][0] == spielfeld[1][1] == spielfeld[2][2] == spieler or \
+        spielfeld[0][2] == spielfeld[1][1] == spielfeld[2][0] == spieler:
+        return True
+
+# 5. Unentschieden
+def unentschieden(brett):
+    for zeile in brett:
+        if " " in zeile:
+            return False
+    return True
+
 
 # Spiel starten
 def play_game():
@@ -23,14 +52,18 @@ def play_game():
         print_spielfeld(brett)
         zeile = int(input(f"Spieler {aktueller_spieler}, wähle deine Zeile (0-2): "))
         spalte = int(input(f"Spieler {aktueller_spieler}, wähle deine Spalte (0-2): "))
-        if not zug(brett, aktueller_spieler, zeile, spalte)
+        if not zug(brett, aktueller_spieler, zeile, spalte):
+            print("Invalid! Try again.")
+            continue
+        if result(brett, aktueller_spieler):
+            print_spielfeld(brett)
+            print(f"Du hast gewonnen Spieler {aktueller_spieler}")
+            break
+        elif unentschieden(brett):
+            print_spielfeld(brett)
+            print("Unentschieden!")
+            break
 
-# 3. Zug
-def zug(spielfeld, spieler, zeile, spalte):
-    if spielfeld[zeile][spalte] == " ":
-        spielfeld[zeile][spalte] = spieler
-        return True
-    else:
-        return False
+        aktueller_spieler = "O" if aktueller_spieler == "X" else "X"
 
 play_game()
